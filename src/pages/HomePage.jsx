@@ -6,7 +6,6 @@ import {
   Building2,
   MapPin,
 } from 'lucide-react'
-
 import StatsCard from '../components/StatsCard'
 import GlassCard from '../components/GlassCard'
 import SearchBar from '../components/SearchBar'
@@ -81,7 +80,8 @@ function HomePage() {
           entry.dishName?.toLowerCase().includes(search) ||
           entry.restaurant?.toLowerCase().includes(search) ||
           entry.city?.toLowerCase().includes(search) ||
-          entry.category?.toLowerCase().includes(search)
+          entry.category?.toLowerCase().includes(search)||
+          entry.comment?.toLowerCase().includes(search)
         )
       })
     }
@@ -131,26 +131,26 @@ function HomePage() {
   const cities = [...new Set(entries.map((e) => e.city))]
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-6 md:px-6 md:py-10">
+    <div className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-12">
       <Toaster position="top-right" />
 
-      <div className="mb-10 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+      <div className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-orange-400">
+          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-white/35">
             Dashboard
           </p>
 
-          <h2 className="text-4xl font-black leading-tight md:text-5xl">
+          <h2 className="text-5xl font-[900] leading-[0.95] tracking-tight md:text-6xl">
             Your Food Journey
           </h2>
 
-          <p className="mt-4 max-w-2xl text-base text-white/50 md:text-lg">
+          <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-white/35 md:text-lg">
             Search, filter, and manage your food memories.
           </p>
         </div>
       </div>
 
-      <div className="mb-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="mb-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
         <StatsCard
           title="Total Entries"
           value={stats.totalEntries}
@@ -176,8 +176,8 @@ function HomePage() {
         />
       </div>
 
-      <GlassCard className="mb-8 p-5 md:p-6">
-        <div className="space-y-5">
+      <GlassCard className="mb-10 p-6 md:p-7">
+        <div className="space-y-6">
           <SearchBar
             value={searchTerm}
             onChange={setSearchTerm}
@@ -195,20 +195,19 @@ function HomePage() {
           />
         </div>
       </GlassCard>
-
-      <div className="mb-6 flex items-center justify-between">
-        <h3 className="text-2xl font-bold">
+      <div className="mb-8 flex items-center justify-between">
+        <h3 className="text-3xl font-[900] tracking-tight">
           Food Entries
         </h3>
 
-        <div className="text-sm text-white/40">
+        <div className="text-sm text-white/25">
           {filteredEntries.length} results
         </div>
       </div>
 
-      <div className="grid gap-5">
+      <div className="grid gap-7">
         {filteredEntries.length === 0 && (
-          <GlassCard className="p-12 text-center text-white/50">
+          <GlassCard className="p-16 text-center text-white/35">
             No matching food entries found.
           </GlassCard>
         )}

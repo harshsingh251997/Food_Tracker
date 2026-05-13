@@ -87,7 +87,17 @@ function EditEntryModal({ entry, onClose, onUpdated }) {
             />
           </div>
         </div>
-
+          <div className="md:col-span-2">
+            <textarea
+              placeholder="Comments"
+              value={formData.comment || ''}
+              onChange={(e) =>
+                updateField('comment', e.target.value)
+              }
+              rows={5}
+              className="w-full rounded-2xl border border-white/10 bg-black/20 p-4 text-white outline-none transition focus:border-orange-500"
+            />
+          </div>
         <button
           onClick={handleSave}
           className="mt-8 w-full rounded-2xl bg-gradient-to-r from-orange-500 to-yellow-400 p-4 font-bold text-black transition hover:scale-[1.01]"
