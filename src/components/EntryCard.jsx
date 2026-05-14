@@ -14,7 +14,7 @@ function EntryCard({
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.03 }}
         >
-            <GlassCard className="p-7 md:p-8">
+            <GlassCard className="p-6 md:p-8">
                 <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
                     <div>
                         <div className="mb-3 flex flex-wrap items-center gap-3">

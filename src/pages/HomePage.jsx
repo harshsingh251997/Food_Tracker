@@ -140,7 +140,7 @@ function HomePage() {
             Dashboard
           </p>
 
-          <h2 className="text-5xl font-[900] leading-[0.95] tracking-tight md:text-6xl">
+          <h2 className="text-4xl font-[900] leading-[0.95] tracking-tight md:text-6xl">
             Your Food Journey
           </h2>
 

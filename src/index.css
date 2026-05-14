@@ -148,3 +148,9 @@ h6 {
 #root {
   animation: pageFade 0.5s ease;
 }
+
+@media (max-width: 768px) {
+  html {
+    font-size: 93%;
+  }
+}

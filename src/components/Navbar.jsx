@@ -71,7 +71,7 @@ function Navbar() {
       </div>
 
       <div className="fixed bottom-5 left-1/2 z-50 w-[92%] max-w-md -translate-x-1/2 rounded-[32px] border border-white/[0.06] bg-[#10141D]/95 backdrop-blur-3xl shadow-[0_20px_60px_rg ba(0,0,0,0.55)] md:hidden">
-        <div className="flex items-center justify-around px-3 py-4">
+        <div className="flex items-center justify-around px-3 py-3">
           {navItems.map((item) => {
             const Icon = item.icon
             const isActive = location.pathname === item.path
